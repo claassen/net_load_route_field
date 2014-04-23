@@ -1,0 +1,4 @@
+name = NET Load Route Field
+description = Field for specifying pickup and delivery locations for a load
+package = NET
+core = 7.x

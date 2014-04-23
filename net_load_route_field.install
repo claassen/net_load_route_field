@@ -1,0 +1,136 @@
+<?php
+
+/**
+ * Implements hook_field_schema().
+ */
+// function net_load_route_field_field_schema($field) {
+//   $columns = array(
+//     'pickup_lat' => array(
+//       'description' => 'Stores the latitude value',
+//       'type' => 'float',
+//       'size' => 'big',
+//       'not null' => TRUE,
+//       'default' => 0,
+//     ),
+//     'pickup_lng' => array(
+//       'description' => 'Stores the longitude value',
+//       'type' => 'float',
+//       'size' => 'big',
+//       'not null' => TRUE,
+//       'default' => 0,
+//     ),
+//     'pickup_lat_sin' => array(
+//       'description' => 'Stores the sine of latitude',
+//       'type' => 'float',
+//       'size' => 'big',
+//       'not null' => TRUE,
+//       'default' => 0,
+//     ),
+//     'pickup_lat_cos' => array(
+//       'description' => 'Stores the cosine of latitude',
+//       'type' => 'float',
+//       'size' => 'big',
+//       'not null' => TRUE,
+//       'default' => 0,
+//     ),
+//     'pickup_lng_rad' => array(
+//       'description' => 'Stores the radian longitude',
+//       'type' => 'float',
+//       'size' => 'big',
+//       'not null' => TRUE,
+//       'default' => 0,
+//     ),
+
+//     'destination_lat' => array(
+//       'description' => 'Stores the latitude value',
+//       'type' => 'float',
+//       'size' => 'big',
+//       'not null' => TRUE,
+//       'default' => 0,
+//     ),
+//     'destination_lng' => array(
+//       'description' => 'Stores the longitude value',
+//       'type' => 'float',
+//       'size' => 'big',
+//       'not null' => TRUE,
+//       'default' => 0,
+//     ),
+//     'destination_lat_sin' => array(
+//       'description' => 'Stores the sine of latitude',
+//       'type' => 'float',
+//       'size' => 'big',
+//       'not null' => TRUE,
+//       'default' => 0,
+//     ),
+//     'destination_lat_cos' => array(
+//       'description' => 'Stores the cosine of latitude',
+//       'type' => 'float',
+//       'size' => 'big',
+//       'not null' => TRUE,
+//       'default' => 0,
+//     ),
+//     'destination_lng_rad' => array(
+//       'description' => 'Stores the radian longitude',
+//       'type' => 'float',
+//       'size' => 'big',
+//       'not null' => TRUE,
+//       'default' => 0,
+//     ),
+//   );
+//   $indexes = array(
+//     'pickup_lat' => array('pickup_lat'),
+//     'pickup_lng' => array('pickup_lng'),
+//     'destination_lat' => array('destination_lat'),
+//     'destination_lng' => array('destination_lng'),
+//   );
+//   return array(
+//     'columns' => $columns,
+//     'indexes' => $indexes,
+//   );
+// }
+
+/**
+ * Implements hook_field_schema().
+ */
+function net_load_route_field_field_schema($field) {
+  $columns = array(
+    'lat_p' => array(
+      'description' => 'Stores the latitude value for pickup location',
+      'type' => 'float',
+      'size' => 'big',
+      'not null' => TRUE,
+      'default' => 0,
+    ),
+    'lng_p' => array(
+      'description' => 'Stores the longitude value for pickup location',
+      'type' => 'float',
+      'size' => 'big',
+      'not null' => TRUE,
+      'default' => 0,
+    ),
+    'lat_d' => array(
+      'description' => 'Stores the latitude value for destination location',
+      'type' => 'float',
+      'size' => 'big',
+      'not null' => TRUE,
+      'default' => 0,
+    ),
+    'lng_d' => array(
+      'description' => 'Stores the longitude value for destination location',
+      'type' => 'float',
+      'size' => 'big',
+      'not null' => TRUE,
+      'default' => 0,
+    )
+  );
+  $indexes = array(
+    'lat_p' => array('lat_p'),
+    'lng_p' => array('lng_p'),
+    'lat_d' => array('lat_d'),
+    'lng_d' => array('lng_d'),
+  );
+  return array(
+    'columns' => $columns,
+    'indexes' => $indexes,
+  );
+}
